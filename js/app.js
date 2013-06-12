@@ -15,6 +15,12 @@ App.ApplicationRoute = Ember.Route.extend({
   }
 });
 
+App.IndexRoute = Ember.Route.extend({
+  redirect: function() {
+    this.transitionTo('tables');
+  }
+});
+
 App.TablesRoute = Ember.Route.extend({
   model: function() {
     return App.Table.find();
@@ -29,9 +35,12 @@ App.TablesRoute = Ember.Route.extend({
 // });
 
 // Controller
-App.TablesController = Ember.ArrayController.extend();
-
 // AUTO GENERATED
+App.TablesController = Ember.ArrayController.extend({
+  sortProperties: ['id']
+});
+
+// AUTO GENERATED b/c mentioned in a route it will be created. Also didn't use any custom code
 // App.TableController = Ember.ObjectController.extend();
 
 App.FoodController = Ember.ArrayController.extend({
@@ -45,7 +54,8 @@ App.FoodController = Ember.ArrayController.extend({
   }
 });
 
-App.TabController = Ember.ObjectController.extend();
+// AUTO GENERATED b/c asked for by name to be rendered from a template
+// App.TabController = Ember.ObjectController.extend();
 
 // View Helpers
 Ember.Handlebars.registerBoundHelper('money', function(value) {
