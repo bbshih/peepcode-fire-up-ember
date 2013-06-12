@@ -70,7 +70,7 @@
       <ul id="customer-tab">
       {{#each tabItem in tabItems}}
         <li>
-          <h3>{{ tabItem.food.name }} <span>${{ tabItem.food.cents }}</span>
+          <h3>{{ tabItem.food.name }} <span>${{ money tabItem.food.cents }}</span>
           </h3>
          </li>
       {{else}}
@@ -78,7 +78,7 @@
           <h3>Click a food to add it</h3>
         </li>
       {{/each}}
-      <li id="total"><h3>Total <span>${{cents}}</span></h3></li>
+      <li id="total"><h3>Total <span>${{ money cents }}</span></h3></li>
       </ul>
     </script>
 
