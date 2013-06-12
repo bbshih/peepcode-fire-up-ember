@@ -34,8 +34,11 @@
     <script type="text/x-handlebars" data-template-name="tables">
 
     <div id="row">
-      <div class="four" id="tables">
+      <div class="four columns" id="tables">
         {{ partial "tableMenu" }}
+      </div>
+      <div class="eight columns" id="table">
+        {{ outlet}}
       </div>
     </div>
     </script>
@@ -45,6 +48,10 @@
       {{#each table in controller}}
         {{#linkTo "table" table class="panel six columns"}}{{ table.id }}{{/linkTo}}
       {{/each}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="table">
+      <h2>Table <span>{{id}}</span></h2>
     </script>
 
     <script src="js/libs/jquery-1.8.3.min.js"></script>
