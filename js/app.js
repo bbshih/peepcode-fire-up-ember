@@ -22,11 +22,11 @@ App.TablesRoute = Ember.Route.extend({
 });
 
 //  AUTO GENERATED
-App.TableRoute = Ember.Route.extend({
-  model: function(params) {
-    return App.Table.find(params.table_id);
-  }
-});
+// App.TableRoute = Ember.Route.extend({
+//   model: function(params) {
+//     return App.Table.find(params.table_id);
+//   }
+// });
 
 // Controller
 App.TablesController = Ember.ArrayController.extend();
@@ -34,7 +34,16 @@ App.TablesController = Ember.ArrayController.extend();
 // AUTO GENERATED
 // App.TableController = Ember.ObjectController.extend();
 
-App.FoodController = Ember.ArrayController.extend();
+App.FoodController = Ember.ArrayController.extend({
+  addFood: function(food) {
+    var table = this.controllerFor('table').get('model'),
+    tabItems = table.get('tab.tabItems');
+    tabItems.createRecord({
+      food: food,
+      cents: food.get('cents')
+    })
+  }
+});
 
 App.TabController = Ember.ObjectController.extend();
 

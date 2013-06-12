@@ -86,7 +86,9 @@
       <ul id="menu">
       {{#each controller}}
         <li>
-          <img {{ bindAttr src="imageUrl"}}>
+          <a href="#" {{ action "addFood" this }}>
+            <img {{ bindAttr src="imageUrl"}}>
+          </a>
           <p>{{ name }}</p>
         </li>
       {{/each}}
