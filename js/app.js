@@ -22,11 +22,11 @@ App.TablesRoute = Ember.Route.extend({
 });
 
 //  AUTO GENERATED
-// App.TableRoute = Ember.Route.extend({
-//   model: function(params) {
-//     return App.Table.find(params.table_id);
-//   }
-// });
+App.TableRoute = Ember.Route.extend({
+  model: function(params) {
+    return App.Table.find(params.table_id);
+  }
+});
 
 // Controller
 App.TablesController = Ember.ArrayController.extend();
